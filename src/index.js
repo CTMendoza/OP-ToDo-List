@@ -1,6 +1,11 @@
 import "./styles.css";
 import { createNewTask } from "./newTask";
-
-console.log('hello');
-createNewTask();
+import { setTaskModalListener, setProjectModalListener } from "./toggleModals";
+// document.addEventListener('DOMContentLoaded', () => {
+//     setTaskModalListener();
+// });
+setTaskModalListener();
+setProjectModalListener();
+// console.log('hello');
+// createNewTask();
 

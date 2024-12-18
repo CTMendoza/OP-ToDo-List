@@ -66,3 +66,12 @@ body {
 .tasks h2:hover, .projects h2:hover {
   color: #B8DBD9;
 }
+
+#task-modal, #project-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0,0,0, 0.3);
+  width: 100%;
+  height: 100%;
+}
