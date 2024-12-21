@@ -133,3 +133,8 @@ input, select, .submit-bttn {
   left: 131px;
   font-size: 20px;
 }
+
+.close:hover {
+  font-weight: bold;
+  color: red;
+}
