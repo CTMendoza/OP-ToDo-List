@@ -25,16 +25,16 @@
         <div class="main"></div>
     </div>
     <div id="task-modal">
-        <form action="" method="post" class="modal-content">
+        <form action="" method="" class="modal-content">
             <div class="form-header">
                 <h2>Task:</h2>
                 <span class="close">&times;</span>
             </div>
-            <input type="text" placeholder="Task Title" name="task_title">
-            <textarea name="task_description" id="" placeholder="Description" rows="10"></textarea>
+            <input type="text" placeholder="Task Title" name="task_title" required>
+            <textarea name="task_description" id="" placeholder="Description" rows="10" required></textarea>
             <div class="priority-container">
                 <label for="task_priority">Priority</label>
-                <select name="task_priority" id="task_priority">
+                <select name="task_priority" id="task_priority" required>
                     <option value="Low" style="font-weight: bold;">Low</option>
                     <option value="Medium" style="font-weight: bold;">Medium</option>
                     <option value="High" style="font-weight: bold;">High</option>
@@ -42,7 +42,7 @@
             </div>
             <div class="date-container">
                 <label for="task_date">Due Date</label>
-                <input name="task_date" type="date" id="task_date">
+                <input name="task_date" type="date" id="task_date" required>
             </div>
             <button type="submit" class="submit-bttn">Save</button>
         </form>
