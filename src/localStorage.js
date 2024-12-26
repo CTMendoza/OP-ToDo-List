@@ -13,6 +13,7 @@ function saveTasksToLocalStorage (newTask) {
     tasks.push(newTask);
     // Save the updated list of tasks back to localStorage
     localStorage.setItem('tasks', JSON.stringify(tasks));
+    console.log(`tasks array: ${tasks}`)
 }
 
 function loadTasksFromLocalStorage () {
