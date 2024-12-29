@@ -4,9 +4,10 @@ import  {Task} from './task';
 import { saveTasksToLocalStorage, loadTasksFromLocalStorage } from './localStorage';
 export {createNewTask};
 
+const tasksList = document.querySelector('.tasks-list');
 
 function createNewTask (title, description, priority, dueDate) {
     let newTask = new Task (title, description, priority, dueDate);
     saveTasksToLocalStorage(newTask);
-    loadTasksFromLocalStorage();
+    loadTasksFromLocalStorage(tasksList);
 }
