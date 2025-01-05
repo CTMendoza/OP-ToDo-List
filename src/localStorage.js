@@ -21,17 +21,22 @@ function loadTasksFromLocalStorage (taskList) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     console.log('Loaded Tasks:', tasks);
     // Optionally, render tasks on the UI
-    tasks.forEach(task => {
+    tasks.forEach((task, index) => {
         const taskItem = document.createElement('li');
         taskItem.className='task-item';
+
+        // Set a unique data-task-id for each taskItem
+        taskItem.setAttribute('data-task-id', index + 1);
 
         const taskItemLine1 = document.createElement('div');
         const taskItemLine2 = document.createElement('div');
 
         const taskTitle = document.createElement('h2');
+        taskTitle.className = 'title';
         taskTitle.textContent = `${task.title}`
 
         const taskDate = document.createElement('h3');
+        taskDate.className = 'due-date'
         taskDate.textContent = `${task.dueDate}`
 
         const taskPriority = document.createElement('h3');

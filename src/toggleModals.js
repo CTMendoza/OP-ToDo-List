@@ -1,17 +1,19 @@
-export {setTaskModalListener, setProjectModalListener}
+export {openTaskModal, closeTaskModal, setProjectModalListener}
 
 
 
-function setTaskModalListener () {
-    const close = document.querySelector('.close');
+function openTaskModal () {
     const taskModal = document.querySelector('#task-modal');
     const createTaskButton = document.querySelector('.new-task-bttn');
-    const form = document.querySelector('.modal-content');
-    
     createTaskButton.addEventListener('click', () => {
         taskModal.style.display = "block";
     })   
-     
+}
+
+function closeTaskModal () {
+    const taskModal = document.querySelector('#task-modal');
+    const close = document.querySelector('.close');
+    const form = document.querySelector('.modal-content');
     close.addEventListener('click', () => {
         form.reset();
         taskModal.style.display = 'none';

@@ -41,6 +41,8 @@ body {
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  max-height: 400px; /* Set a fixed height or max-height */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .task-item {
