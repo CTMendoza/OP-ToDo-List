@@ -47,6 +47,7 @@ body {
 
 .task-item {
   display: flex;
+<<<<<<< HEAD
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid white;
@@ -73,6 +74,14 @@ body {
 
 
 
+=======
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  align-items: center;
+  padding: 10px;
+}
+
+>>>>>>> 920d8c0b5cf050439c118a9c3d2ef246d96a0a9d
 .task-item-line2 {
   display: flex;
   gap: 17px;
@@ -85,6 +94,7 @@ body {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
 .complete {
   width: 1rem;
   height: 1rem;
@@ -98,6 +108,8 @@ body {
   margin: 0px;
 }
 
+=======
+>>>>>>> 920d8c0b5cf050439c118a9c3d2ef246d96a0a9d
 .sidebar, .main {
   background-color: #2F4550;
   color: white;
