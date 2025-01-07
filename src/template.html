@@ -22,13 +22,18 @@
                 <h2>Completed Projects</h2>
             </div>
         </div>
-        <div class="main"></div>
+        <div class="main">
+           <h1>Tasks Dashboard</h1>
+           <ul class="tasks-list">
+                <!--list items will be loaded via DOM in javascript after user creates a new task  -->
+           </ul>
+        </div>
     </div>
     <div id="task-modal">
         <form action="" method="" class="modal-content">
             <div class="form-header">
                 <h2>Task:</h2>
-                <span class="close">&times;</span>
+                <div><p class="close">&times;</p></div>
             </div>
             <input type="text" placeholder="Task Title" name="task_title" required>
             <textarea name="task_description" id="" placeholder="Description" rows="10" required></textarea>
