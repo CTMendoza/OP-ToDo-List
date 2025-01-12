@@ -1,19 +1,36 @@
 // submit form data and 
 export {submitFormData}
 import { createNewTask } from "./newTask";
+import { editTaskElement } from "./editTask";
+import { setSelectedTaskId, resetSelectedTaskId, selectedTaskId } from ".";
 
 const form = document.querySelector('.modal-content');
 const taskModal = document.querySelector('#task-modal');
 
-function  submitFormData () {
+function submitFormData() {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        // retrieve form data
-        const taskData = new FormData(form);
-        // extract form data and store it into a new task object using createNewTask imported from newTask.js module
-        createNewTask(taskData.get('task_title'), taskData.get('task_description'), taskData.get('task_priority'), taskData.get('task_date'))
-        // reset form and close modal
+       
+        // Extract individual values from the modal inputs
+       const taskTitle = document.querySelector('#task-title').value;
+       const taskDescription = document.querySelector('#task-description').value;
+       const taskPriority = document.querySelector('#task-priority').value;
+       const taskDate = document.querySelector('#task-date').value;
+
+        // If a task is being edited, update it; otherwise, create a new task
+        if (selectedTaskId !== null) {  // We check the value of selectedTaskId directly
+            // Editing an existing task
+            editTaskElement(taskTitle, taskDescription, taskPriority, taskDate);
+        } else {
+            // Creating a new task
+            createNewTask(taskTitle, taskDescription, taskPriority, taskDate);
+        }
+
+        // Reset form and close modal
         form.reset();
         taskModal.style.display = 'none';
-    })
+
+        // Reset selectedTaskId after task is saved (via resetSelectedTaskId function)
+        resetSelectedTaskId();
+    });
 }

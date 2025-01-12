@@ -6,6 +6,19 @@ import { loadTasksFromLocalStorage } from "./localStorage";
 import { selectTaskElement, editTaskElement } from "./editTask";
 import { openCompletedTaskTab } from "./completedTask";
 import { openTaskInbox } from "./inbox";
+
+// Define selectedTaskId as a global variable here
+export  {setSelectedTaskId, resetSelectedTaskId}
+
+export let selectedTaskId = null;
+
+function setSelectedTaskId(taskId) {
+    selectedTaskId = taskId;
+}
+
+function resetSelectedTaskId() {
+    selectedTaskId = null;
+}
 // document.addEventListener('DOMContentLoaded', () => {
 //     setTaskModalListener();
 // });
@@ -21,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setProjectModalListener();
     submitFormData();
     selectTaskElement();
-    editTaskElement();
     openCompletedTaskTab();
     openTaskInbox();
 });

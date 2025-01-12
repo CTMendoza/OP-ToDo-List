@@ -35,11 +35,11 @@
                 <h2>Task:</h2>
                 <div><p class="close">&times;</p></div>
             </div>
-            <input type="text" placeholder="Task Title" name="task_title" required>
-            <textarea name="task_description" id="" placeholder="Description" rows="10" required></textarea>
+            <input type="text" placeholder="Task Title" name="task_title" id="task-title" required>
+            <textarea name="task_description" id="task-description" placeholder="Description" rows="10" required></textarea>
             <div class="priority-container">
                 <label for="task_priority">Priority</label>
-                <select name="task_priority" id="task_priority" required>
+                <select name="task_priority" id="task-priority" required>
                     <option value="Low" style="font-weight: bold;">Low</option>
                     <option value="Medium" style="font-weight: bold;">Medium</option>
                     <option value="High" style="font-weight: bold;">High</option>
@@ -47,7 +47,7 @@
             </div>
             <div class="date-container">
                 <label for="task_date">Due Date</label>
-                <input name="task_date" type="date" id="task_date" required>
+                <input name="task_date" type="date" id="task-date" required>
             </div>
             <button type="submit" class="submit-bttn">Save</button>
         </form>
