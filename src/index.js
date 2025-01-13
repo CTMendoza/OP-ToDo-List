@@ -6,6 +6,7 @@ import { loadTasksFromLocalStorage } from "./localStorage";
 import { selectTaskElement, editTaskElement } from "./editTask";
 import { openCompletedTaskTab } from "./completedTask";
 import { openTaskInbox } from "./inbox";
+import { deleteTask } from "./deleteTask";
 
 // Define selectedTaskId as a global variable here
 export  {setSelectedTaskId, resetSelectedTaskId}
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectTaskElement();
     openCompletedTaskTab();
     openTaskInbox();
+    deleteTask();
 });
 
 // console.log('hello');
