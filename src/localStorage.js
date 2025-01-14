@@ -16,11 +16,10 @@ function saveTasksToLocalStorage (newTask) {
     console.log(`tasks array: ${tasks}`)
 }
 
-function loadTasksFromLocalStorage (taskList) {
+function loadTasksFromLocalStorage (taskList, storageKey = 'tasks') {
     
     taskList.innerHTML = ''; // reset taskList to avoid duplicates
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    console.log('Loaded Tasks:', tasks);
+    const tasks = JSON.parse(localStorage.getItem(storageKey)) || [];
 
     tasks.forEach((task, index) => {
         let taskItem = taskList.querySelector(`[data-task-id="${index}"]`);

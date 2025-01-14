@@ -2,16 +2,21 @@
 a list of "completed" task will replace them. 
 */
 import { tasksList } from "./newTask";
+import { setSelectedTaskId, resetSelectedTaskId, selectedTaskId } from ".";
+import { loadTasksFromLocalStorage } from "./localStorage";
 
-
-const completedTaskButton = document.querySelector('.completed-tasks');
-const dashHeader = document.querySelector('.dashboard-header')
+const completedTaskHeader = document.querySelector('.completed-tasks');
+const dashHeader = document.querySelector('.dashboard-header');
+const completedTaskList = document.querySelector('.completed-tasks-list');
 
 function openCompletedTaskTab () {
-    completedTaskButton.addEventListener('click',()=> {
-        tasksList.innerHTML = '';
+    completedTaskHeader.addEventListener('click',()=> {
+        // tasksList.innerHTML = '';
+        completedTaskList.style.display = 'flex';
         dashHeader.textContent = 'Completed Task Dashboard';
+        tasksList.style.display = 'none';
+        loadTasksFromLocalStorage(completedTaskList,'completedTasks')
     })
 }
 
-export {openCompletedTaskTab, dashHeader};
+export {openCompletedTaskTab, dashHeader, completedTaskList};

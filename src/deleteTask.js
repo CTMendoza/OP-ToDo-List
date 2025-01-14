@@ -1,9 +1,9 @@
 export {deleteTask};
 import { setSelectedTaskId, resetSelectedTaskId, selectedTaskId } from ".";
 
-function deleteTask() {
+function deleteTask(element) {
     document.addEventListener('click', (event) => {
-        if (event.target.matches('.ion--trash')) {
+        if (event.target.matches(element)) {
             const parentLi = event.target.closest('li');
             const taskId = parentLi.getAttribute('data-task-id');
             setSelectedTaskId(taskId);

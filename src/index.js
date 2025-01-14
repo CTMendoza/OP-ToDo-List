@@ -7,6 +7,7 @@ import { selectTaskElement, editTaskElement } from "./editTask";
 import { openCompletedTaskTab } from "./completedTask";
 import { openTaskInbox } from "./inbox";
 import { deleteTask } from "./deleteTask";
+import { completeTask } from "./checkedOffTask";
 
 // Define selectedTaskId as a global variable here
 export  {setSelectedTaskId, resetSelectedTaskId}
@@ -37,9 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     selectTaskElement();
     openCompletedTaskTab();
     openTaskInbox();
-    deleteTask();
+    deleteTask('.ion--trash');
+    completeTask();
 });
-
-// console.log('hello');
-// createNewTask();
-
